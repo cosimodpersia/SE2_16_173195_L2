@@ -2,16 +2,33 @@ var table = document.getElementById("store");
 var row = table.insertRow(0);
 var row2 = table.insertRow(1);
 
+//*/**
+* @brief Item Constructor
+    * @
+    return item.*/< A brief description.
+
 function item(name, quantity) {
     this.name = name;
     this.quantity = parseInt(quantity);
 }
+
+/**
+ * @brief the rray that will contain item
+ */
 var items = [];
 
+/**
+ * @brief test if the input is numeric
+ * @return true or false
+ */
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
+/**
+ * @brief function that update the table
+ * @return nothing
+ */
 function add(name, quantity) {
     var flag = false;
     var size = document.getElementById("size").value;
@@ -42,12 +59,18 @@ function add(name, quantity) {
     return flag;
 }
 
+/**
+ * @brief add an event that fires when the button is pressed. It shows the menu
+ */
 var buttonUpdate = document.getElementById("update");
 buttonUpdate.onclick = function () {
     var menu = document.getElementById("insert");
     menu.style.visibility = "visible"
 };
 
+/**
+ * @brief function that update item with new values
+ */
 var updateItem = document.getElementById("set");
 updateItem.onclick = function () {
     var name = document.getElementById("name").value;
@@ -59,6 +82,9 @@ updateItem.onclick = function () {
     }
 };
 
+/**
+ * @brief function that updates the table sorting in base of the name of item
+ */
 var sort = document.getElementById("sort");
 sort.onclick = function () {
     items.sort(function (a, b) {
