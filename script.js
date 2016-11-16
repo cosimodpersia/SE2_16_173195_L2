@@ -2,18 +2,16 @@ var table = document.getElementById("store");
 var row = table.insertRow(0);
 var row2 = table.insertRow(1);
 
-//*/**
-* @brief Item Constructor
-    * @
-    return item.*/< A brief description.
-
+/**
+ * @brief item constructor
+ */
 function item(name, quantity) {
     this.name = name;
     this.quantity = parseInt(quantity);
 }
 
 /**
- * @brief the rray that will contain item
+ * @brief the array that will contain item
  */
 var items = [];
 
@@ -80,6 +78,10 @@ updateItem.onclick = function () {
     } else {
         alert("quantity must be a integer number!!");
     }
+    var menu = document.getElementById("insert");
+    menu.style.visibility = "hidden";
+    document.getElementById("name").value = "";
+    document.getElementById("quantity").value = "";
 };
 
 /**
