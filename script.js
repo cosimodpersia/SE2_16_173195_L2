@@ -17,6 +17,12 @@ function add(name, quantity) {
     var size = document.getElementById("size").value;
     var sum = 0;
 
+    for (var i = 0; i < items.length; i++) {
+        sum += items[i].quantity;
+    }
+    if ((parseInt(sum) + parseInt(quantity)) >= size) {
+        alert("WARNING ! You have exceeded the maximum storage amount.")
+    }
     for (var i = items.length - 1; i >= 0; i--) {
         if (items[i].name === name) {
             items[i].quantity += parseInt(quantity);
